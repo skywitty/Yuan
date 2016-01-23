@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>在线尝试 Bootstrap 实例</title>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <script>
+   	function submit(url){
+   		var name = document.getElementsByName("showname")[0].value;
+	   	if(name == ""){
+	   		return;
+	   	}else{
+	   		window.open(url+"?showname=" + name);
+	   	}
+   	}
+   	function toggleTip(){
+   		var name = document.getElementsByName("showname")[0].value;
+   		var preCls = document.getElementById("showNameDiv").getAttribute("class");
+   		var a = preCls.split(" ");
+	   	if(name == ""){
+		   	for(var i=0,len=a.length;i<len;i++){
+		   		if(a[i] === "has-error"){
+		   			return;
+		   		}
+		   	}
+   			document.getElementById("showNameDiv").setAttribute("class", preCls+" has-error");
+	   		document.getElementById("showname_tip").style.display = "block";
+	   	}else{
+	   		for(var i=0,len=a.length;i<len;i++){
+		   		if(a[i] === "has-error"){
+		   			a[i] = "";
+		   		}
+		   	}
+	   		document.getElementById("showNameDiv").setAttribute("class", a.join(" "));
+	   		document.getElementById("showname_tip").style.display = "none";
+	   	}
+   	}
+   </script>
+</head>
+<body style="padding: 15% 30% 30%; background-image: url('Images/bgpic/login.jpg'); background-repeat: repeat; background-position: right top;overflow: hidden;">
+<div class="container">
+<form action="">
+<div class="form-horizontal row">
+<div class="col-md-8" id="showNameDiv">
+	<label class="control-label col-md-3">who?</label>
+	<div class="col-md-6">
+		<input type="text" class="form-control" value="" required="required" name="showname"  onblur="toggleTip()"/>
+		<div class="alert alert-danger" id="showname_tip" style="display:none;">错误！请输入您需要查看的照片人姓名。</div>
+	</div>
+	<div class="col-xs-3">
+		<a class="btn btn-warning" id="submit" onclick="submit('rr.htm')">进入3D相册</a>
+	</div>
+</div>
+
+</div>
+</form>
+
+</div>
+</body>
+</html>
