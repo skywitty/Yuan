@@ -10,9 +10,10 @@
    	function submit(url){
    		var name = document.getElementsByName("showname")[0].value;
 	   	if(name == ""){
+	   		toggleTip();
 	   		return;
 	   	}else{
-	   		window.open(url+"?showname=" + name);
+	   		document.location.href=url+"?showname=" + name;
 	   	}
    	}
    	function toggleTip(){
