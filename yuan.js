@@ -239,7 +239,7 @@ var si = (function() {
 })();
 
 /**
- * ajaxÇëÇóÊı¾İ
+ * ajaxè¯·æ±‚æ•°æ®
  */
 function ajax(obj,fn){
 	var ajax = new XMLHttpRequest();
@@ -256,7 +256,7 @@ function ajax(obj,fn){
 			 // console.log(json.data[0]);
 			  fn(json);
 		  }catch(e){
-			 // alert("ÇëÇóÊı¾İÊ§°Ü£¡");
+			 // alert("è¯·æ±‚æ•°æ®å¤±è´¥ï¼");
 			  alert("request error");
 			  console.log(e.message)
 		  }
@@ -269,40 +269,40 @@ function ajax(obj,fn){
 			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xmlhttp.send("");
 		}else if(obj.method === "get"){
-			ajax.open("get", obj.url+"?t=" + Math.random(), true, "", "");//t²ÎÊı·ÀÖ¹ä¯ÀÀÆ÷»º´æ	
+			ajax.open("get", obj.url+"?t=" + Math.random(), true, "", "");//tå‚æ•°é˜²æ­¢æµè§ˆå™¨ç¼“å­˜	
 			ajax.send();
 		}
 	}else{
-		alert("»ñÈ¡Êı¾İÊ§°Ü£¬Ë¢ĞÂÖØÊÔ£¡");
+		alert("è·å–æ•°æ®å¤±è´¥ï¼Œåˆ·æ–°é‡è¯•ï¼");
 		return;
 	}
 	
 }
 
 /**
- * ÏÔÊ¾Í¼Æ¬
+ * æ˜¾ç¤ºå›¾ç‰‡
  * @param data
  * @returns {Boolean}
  */
 function showImgs(data){
-	
+	var path = '/3D/webages/Yuan/Images/touming.png';
 	var imgdata = [
 		// north
-		{img:'/3D/webages/Yuan/Images/touming.png', x:-1000, y:0, z:1500, nx:0, nz:1},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:0,     y:0, z:1500, nx:0, nz:1},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:1000,  y:0, z:1500, nx:0, nz:1},
+		{img:path, x:-1000, y:0, z:1500, nx:0, nz:1},
+		{img:path, x:0,     y:0, z:1500, nx:0, nz:1},
+		{img:path, x:1000,  y:0, z:1500, nx:0, nz:1},
 		// east
-		{img:'/3D/webages/Yuan/Images/touming.png', x:1500,  y:0, z:1000, nx:-1, nz:0},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:1500,  y:0, z:0, nx:-1, nz:0},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:1500,  y:0, z:-1000, nx:-1, nz:0},
+		{img:path, x:1500,  y:0, z:1000, nx:-1, nz:0},
+		{img:path, x:1500,  y:0, z:0, nx:-1, nz:0},
+		{img:path, x:1500,  y:0, z:-1000, nx:-1, nz:0},
 		// south
-		{img:'/3D/webages/Yuan/Images/touming.png', x:1000,  y:0, z:-1500, nx:0, nz:-1},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:0,     y:0, z:-1500, nx:0, nz:-1},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:-1000, y:0, z:-1500, nx:0, nz:-1},
+		{img:path, x:1000,  y:0, z:-1500, nx:0, nz:-1},
+		{img:path, x:0,     y:0, z:-1500, nx:0, nz:-1},
+		{img:path, x:-1000, y:0, z:-1500, nx:0, nz:-1},
 		// west
-		{img:'/3D/webages/Yuan/Images/touming.png', x:-1500, y:0, z:-1000, nx:1, nz:0},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:-1500, y:0, z:0, nx:1, nz:0},
-		{img:'/3D/webages/Yuan/Images/touming.png', x:-1500, y:0, z:1000, nx:1, nz:0}
+		{img:path, x:-1500, y:0, z:-1000, nx:1, nz:0},
+		{img:path, x:-1500, y:0, z:0, nx:1, nz:0},
+		{img:path, x:-1500, y:0, z:1000, nx:1, nz:0}
 	];
 	
 	if(typeof data === typeof []){
